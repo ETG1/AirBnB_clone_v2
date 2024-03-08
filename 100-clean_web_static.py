@@ -4,19 +4,19 @@
 import os
 from fabric.api import *
 
-env.hosts = ["100.25.111.181", "174.129.171.238"]
+env.hosts = ["100.25.211.240", "34.207.62.73"]
 
 
 def do_clean(number=0):
-    """Delete out-of-date archives.
+    '''Delete out-of-date archives.
 
     Args:
         number (int): The number of archives to keep.
 
     If number is 0 or 1, keeps only the most recent archive. If
     number is 2, keeps the most and second-most recent archives,
-    etc.
-    """
+    etc.'''
+
     number = 1 if int(number) == 0 else int(number)
 
     archives = sorted(os.listdir("versions"))
